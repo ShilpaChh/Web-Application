@@ -43,11 +43,25 @@ class Application < Sinatra::Base
             name = params[:name]
 
             return "Hello #{name}"
-                # o/p: http://localhost:9292/hello?name=Leo
+                # Postman o/p: http://localhost:9292/hello?name=Leo
                         # Hello Leo
                 # o/p: http://localhost:9292/hello?name=Anna
                         # Hello Anna
         end
+
+        # Ch2 - challenge:
+
+        post '/submit' do
+            name = params[:name]
+            message = params[:message]
+
+            return "Thanks #{name}, you sent this message: #{message}."
+                # o/p: http://localhost:9292/submit
+                # Post => Body => name -> Leo and another field message as "Hello world!"
+                # Thanks Leo, you sent this message: "Hello world!".
+                # and likewise for Shilpa for e.g
+        end
+
 
 end
 
