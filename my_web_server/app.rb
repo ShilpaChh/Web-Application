@@ -1,3 +1,4 @@
+
 require 'sinatra/base'
 # require 'sinatra/reloader'
 
@@ -53,7 +54,7 @@ class Application < Sinatra::Base
     # Ch3 - Exercise:
     get '/names' do
         names = params[:names]
-        return "#{names}"
+        return names
     end
         # o/p:
         # GET /names
@@ -92,11 +93,14 @@ class Application < Sinatra::Base
 
         # Ch3 - challenge:
         post '/sort-names' do
-            names = "Joe,Alice,Zoe,Julia,Kieran"
+            names = params[:names]
+            # names = "Joe,Alice,Zoe,Julia,Kieran"
             sort_names = names.split(",").sort.join(",")
-        
+    
             return sort_names
         end
+
+
 
 end
 

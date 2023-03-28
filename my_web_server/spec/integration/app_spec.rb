@@ -87,7 +87,7 @@ describe Application do # we are simulating HTTP, with this Application, rspec w
         it "returns 'Julia, Mary, Karim'" do
             response = get("/names?names=Julia,Mary,Karim")
             expect(response.status).to eq 200
-            expect(response.body).to eq 'Julia, Mary, Karim'
+            expect(response.body).to eq 'Julia,Mary,Karim'
         end
     end
                                 
@@ -109,7 +109,7 @@ describe Application do # we are simulating HTTP, with this Application, rspec w
       # Send a POST request to /submit
       # with some body parameters
       # and returns a response object we can test.
-      response = post("/sort-names")
+      response = post("/sort-names?names=Joe,Alice,Zoe,Julia,Kieran")
 
       # Assert the response status code and body.
       expect(response.status).to eq(200)
@@ -118,3 +118,6 @@ describe Application do # we are simulating HTTP, with this Application, rspec w
   end
 
 end
+
+
+
