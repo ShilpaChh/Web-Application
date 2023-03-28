@@ -52,11 +52,14 @@ class Application < Sinatra::Base
 
     # Ch3 - Exercise:
     get '/names' do
-        return "Julia, Mary, Karim"
+        names = params[:names]
+        return "#{names}"
     end
         # o/p:
         # GET /names
         # returns 'Julia, Mary, Karim'
+            # o/p: http://localhost:9292/names?names=Julia, Mary, Shilpa
+            # Julia, Mary, Shilpa
 
 
         # Ch2 - challenge:
