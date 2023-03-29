@@ -90,6 +90,33 @@ describe Application do
 end
 ```
 
+# WEB APPS - CH2 - Exercise: Test-drive and implement a GET /albums/:id route so it returns the HTML content for a single album:
+<!-- Example for GET /albums/1 -->
+
+<html>
+  <head></head>
+  <body>
+    <h1>Doolittle</h1>
+    <p>
+      Release year: 1989
+      Artist: Pixies
+    </p>
+  </body>
+</html>
+
+<!-- Example for GET /albums/2 -->
+
+<html>
+  <head></head>
+  <body>
+    <h1>Surfer Rosa</h1>
+    <p>
+      Release year: 1988
+      Artist: Pixies
+    </p>
+  </body>
+</html>
+
 ## 5. Implement the Route
 
 Write the route and web server code to implement the route behaviour.

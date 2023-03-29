@@ -10,6 +10,82 @@ describe Application do
   # class so our tests work.
   let(:app) { Application.new }
 
+  # PHASE 3 - Ch1 - USING HTML TO CREATE WEBPAGES:
+   context 'GET /' do
+  #   it 'returns the html index' do
+  #     response = get('/')
+
+  #     expect(response.body).to include('<h1> Hello!</h1>')
+
+  #     expect(response.body).to include('<img src="hello.jpg />')
+  #   end
+  # end
+
+      # to make it dynamic:
+      context 'GET /' do
+        it 'returns the html hello message with the given name' do
+          response = get('/', name: 'Shilpa')
+
+          expect(response.body).to include('<h1> Hello Shilpa!</h1>')
+        end
+      end
+
+      # another variation:
+        it 'returns the html hello message with a different name' do
+          response = get('/', name: 'Meghna')
+
+          expect(response.body).to include('<h1> Hello Meghna!</h1>')
+        end
+
+              # making Arrays as dynamic:
+              it 'returns an html list of names' do
+                response = get('/')
+      
+                expect(response.body).to include('<p>Harshita</p>')
+                expect(response.body).to include('<p>Meghna</p>')
+                expect(response.body).to include('<p>Rahul</p>')
+                expect(response.body).to include('<p>Shilpa</p>')
+              end
+
+              # Dealing with conditions like having a password:
+              it 'returns a hello page if the password is correct' do
+                response = get('/', password: 'abcd')
+      
+                expect(response.body).to include('Hello!')
+              end
+
+              # or what happens when the password is incorrect:
+              it 'returns a forbidden page if the password is incorrect' do
+                response = get('/', password: 'junkpwd')
+      
+                expect(response.body).to include('Access forbidden!')
+              end
+
+    end
+
+
+      # WEB APPS - CH2 - Exercise: Test-drive and implement a GET /albums/:id route so it returns the HTML content for a single album:
+
+      context "GET /albums/:id" do
+        it 'should return info about album 1' do
+          response = get('albums/1')
+
+          expect(response.status).to eq(200)
+          expect(response.body).to include('<h1>Doolittle</h1>')
+          expect(response.body).to include('Release year: 1989')
+          expect(response.body).to include('Artist: Pixies')
+
+          # <h1>Doolittle</h1>
+          # <p>
+          #   Release year: 1989
+          #   Artist: Pixies
+          # </p>
+
+        end
+
+      end
+    
+
   context 'GET /albums' do
     it 'should return the list of albums' do
       response = get('/albums')

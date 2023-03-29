@@ -15,6 +15,24 @@ class Application < Sinatra::Base
     also_reload 'lib/artist_repository'
   end
 
+    # PHASE 3 - USING HTML TO CREATE WEBPAGES:
+    get '/' do
+
+      # return 'Hello'
+        # @name = 'Shilpa' # to make this dynamic have this and call in .erb file
+        # @cohort_name = 'Feb 2023' # to make this dynamic have this and call in .erb file
+
+           @name = params[:name]
+
+              # Now to have arrays and make them dynamic:
+                @names = ['Harshita', 'Meghna', 'Rahul', 'Shilpa']
+
+                # when we have condition like password:
+                @password = params[:password]
+
+      return erb(:index) # in reference to the views -> index.erb file we have just created
+    end
+
     get '/albums' do
       repo = AlbumRepository.new
       albums = repo.all
@@ -28,6 +46,14 @@ class Application < Sinatra::Base
               # should return the list of albums
             # also, can chk on Postman:
             # rackup again and then Postman -> http://localhost:9292/albums => displays list all the albums
+      end
+
+      # Ch2 - implement a GET /albums/:id 
+      get '/albums/:id' do
+        repo = AlbumRepository.new
+        @album = repo.find(params[:id])
+  
+        return erb(:album)
       end
 
       post '/albums' do

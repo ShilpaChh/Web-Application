@@ -1,0 +1,1045 @@
+@@ -1,14 +1,27 @@
+-<p1>Harshita</p1>
++<html>
++    <body>
++        <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++
++
++
++
++
++        <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:44:in `block (2 levels) in <top (required)>'
+
+3) Application GET / returns the html hello message with the given name
+Failure/Error: expect(response.body).to include('<h1> Hello Shilpa!</h1>')
+
+expected "<html>\n    <body>\n        <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic as loop</p>\n\n\n\n\n\n        <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "<h1> Hello Shilpa!</h1>"
+Diff:
+@@ -1,14 +1,27 @@
+-<h1> Hello Shilpa!</h1>
++<html>
++    <body>
++        <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++
++
++
++
++
++        <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:29:in `block (3 levels) in <top (required)>'
+
+Finished in 0.12243 seconds (files took 0.22714 seconds to load)
+14 examples, 3 failures
+
+Failed examples:
+
+rspec ./spec/integration/application_spec.rb:34 # Application returns the html hello message with a different name
+rspec ./spec/integration/application_spec.rb:41 # Application returns an html list of names
+rspec ./spec/integration/application_spec.rb:26 # Application GET / returns the html hello message with the given name
+
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+returns the html hello message with a different name (FAILED - 1)
+returns an html list of names (FAILED - 2)
+GET /
+returns the html hello message with the given name (FAILED - 3)
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Failures:
+
+1) Application returns the html hello message with a different name
+Failure/Error: expect(response.body).to include('<h1> Hello Meghna!</h1>')
+
+expected "<html>\n    <body>\n        <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic a...         <p> </p>\n            <p> </p>\n\n        <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "<h1> Hello Meghna!</h1>"
+Diff:
+@@ -1,14 +1,27 @@
+-<h1> Hello Meghna!</h1>
++<html>
++    <body>
++        <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p> </p>
++            <p> </p>
++            <p> </p>
++            <p> </p>
++
++        <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:37:in `block (2 levels) in <top (required)>'
+
+2) Application returns an html list of names
+Failure/Error: expect(response.body).to include('<p1>Harshita</p1>')
+
+expected "<html>\n    <body>\n        <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic a...         <p> </p>\n            <p> </p>\n\n        <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "<p1>Harshita</p1>"
+Diff:
+@@ -1,14 +1,27 @@
+-<p1>Harshita</p1>
++<html>
++    <body>
++        <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p> </p>
++            <p> </p>
++            <p> </p>
++            <p> </p>
++
++        <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:44:in `block (2 levels) in <top (required)>'
+
+3) Application GET / returns the html hello message with the given name
+Failure/Error: expect(response.body).to include('<h1> Hello Shilpa!</h1>')
+
+expected "<html>\n    <body>\n        <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic a...         <p> </p>\n            <p> </p>\n\n        <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "<h1> Hello Shilpa!</h1>"
+Diff:
+@@ -1,14 +1,27 @@
+-<h1> Hello Shilpa!</h1>
++<html>
++    <body>
++        <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p> </p>
++            <p> </p>
++            <p> </p>
++            <p> </p>
++
++        <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:29:in `block (3 levels) in <top (required)>'
+
+Finished in 0.12075 seconds (files took 0.23111 seconds to load)
+14 examples, 3 failures
+
+Failed examples:
+
+rspec ./spec/integration/application_spec.rb:34 # Application returns the html hello message with a different name
+rspec ./spec/integration/application_spec.rb:41 # Application returns an html list of names
+rspec ./spec/integration/application_spec.rb:26 # Application GET / returns the html hello message with the given name
+
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+returns the html hello message with a different name (FAILED - 1)
+returns an html list of names (FAILED - 2)
+GET /
+returns the html hello message with the given name (FAILED - 3)
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Failures:
+
+1) Application returns the html hello message with a different name
+Failure/Error: expect(response.body).to include('<h1> Hello Meghna!</h1>')
+
+expected "<html>\n    <body>\n        <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic a...<p>Rahul</p>\n            <p>Shilpa</p>\n\n        <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "<h1> Hello Meghna!</h1>"
+Diff:
+@@ -1,14 +1,27 @@
+-<h1> Hello Meghna!</h1>
++<html>
++    <body>
++        <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p>Harshita</p>
++            <p>Meghna</p>
++            <p>Rahul</p>
++            <p>Shilpa</p>
++
++        <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:37:in `block (2 levels) in <top (required)>'
+
+2) Application returns an html list of names
+Failure/Error: expect(response.body).to include('<p1>Harshita</p1>')
+
+expected "<html>\n    <body>\n        <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic a...<p>Rahul</p>\n            <p>Shilpa</p>\n\n        <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "<p1>Harshita</p1>"
+Diff:
+@@ -1,14 +1,27 @@
+-<p1>Harshita</p1>
++<html>
++    <body>
++        <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p>Harshita</p>
++            <p>Meghna</p>
++            <p>Rahul</p>
++            <p>Shilpa</p>
++
++        <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:44:in `block (2 levels) in <top (required)>'
+
+3) Application GET / returns the html hello message with the given name
+Failure/Error: expect(response.body).to include('<h1> Hello Shilpa!</h1>')
+
+expected "<html>\n    <body>\n        <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic a...<p>Rahul</p>\n            <p>Shilpa</p>\n\n        <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "<h1> Hello Shilpa!</h1>"
+Diff:
+@@ -1,14 +1,27 @@
+-<h1> Hello Shilpa!</h1>
++<html>
++    <body>
++        <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p>Harshita</p>
++            <p>Meghna</p>
++            <p>Rahul</p>
++            <p>Shilpa</p>
++
++        <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:29:in `block (3 levels) in <top (required)>'
+
+Finished in 0.12949 seconds (files took 0.23231 seconds to load)
+14 examples, 3 failures
+
+Failed examples:
+
+rspec ./spec/integration/application_spec.rb:34 # Application returns the html hello message with a different name
+rspec ./spec/integration/application_spec.rb:41 # Application returns an html list of names
+rspec ./spec/integration/application_spec.rb:26 # Application GET / returns the html hello message with the given name
+
+➜  music_library_database_app git:(main) ✗ rspec
+
+An error occurred while loading ./spec/integration/application_spec.rb.
+Failure/Error: __send__(method, file)
+
+SyntaxError:
+/Users/shilpachhabra/WebApplication/music_library_database_app/spec/integration/application_spec.rb:144: syntax error, unexpected end-of-input, expecting `end'
+# /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rspec-core-3.12.1/lib/rspec/core/configuration.rb:2117:in `load'
+# /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rspec-core-3.12.1/lib/rspec/core/configuration.rb:2117:in `load_file_handling_errors'
+# /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rspec-core-3.12.1/lib/rspec/core/configuration.rb:1617:in `block in load_spec_files'
+# /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rspec-core-3.12.1/lib/rspec/core/configuration.rb:1615:in `each'
+# /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rspec-core-3.12.1/lib/rspec/core/configuration.rb:1615:in `load_spec_files'
+# /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rspec-core-3.12.1/lib/rspec/core/runner.rb:102:in `setup'
+# /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rspec-core-3.12.1/lib/rspec/core/runner.rb:86:in `run'
+# /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rspec-core-3.12.1/lib/rspec/core/runner.rb:71:in `run'
+# /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rspec-core-3.12.1/lib/rspec/core/runner.rb:45:in `invoke'
+# /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rspec-core-3.12.1/exe/rspec:4:in `<top (required)>'
+# /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/bin/rspec:23:in `load'
+# /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/bin/rspec:23:in `<main>'
+# 
+#   Showing full backtrace because every line was filtered out.
+#   See docs for RSpec::Configuration#backtrace_exclusion_patterns and
+#   RSpec::Configuration#backtrace_inclusion_patterns for more information.
+
+Finished in 0.00004 seconds (files took 0.20799 seconds to load)
+0 examples, 0 failures, 1 error occurred outside of examples
+
+➜  music_library_database_app git:(main) ✗ 
+➜  music_library_database_app git:(main) ✗ 
+➜  music_library_database_app git:(main) ✗ 
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+returns an html list of names (FAILED - 1)
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Failures:
+
+1) Application GET / returns an html list of names
+Failure/Error: expect(response.body).to include('<p1>Harshita</p1>')
+
+expected "<html>\n    <body>\n        # <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic...>Rahul</p>\n            <p>Shilpa</p>\n\n        # <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "<p1>Harshita</p1>"
+Diff:
+@@ -1,14 +1,27 @@
+-<p1>Harshita</p1>
++<html>
++    <body>
++        # <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p>Harshita</p>
++            <p>Meghna</p>
++            <p>Rahul</p>
++            <p>Shilpa</p>
++
++        # <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:44:in `block (3 levels) in <top (required)>'
+
+Finished in 0.10996 seconds (files took 0.21574 seconds to load)
+12 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/integration/application_spec.rb:41 # Application GET / returns an html list of names
+
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+returns an html list of names (FAILED - 1)
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Failures:
+
+1) Application GET / returns an html list of names
+Failure/Error: expect(response.body).to include('<p1>Harshita</p1>')
+
+expected "<html>\n    <body>\n\n\n        <p> Having arrays and making them dynamic as loop</p>\n            <...      <p>Meghna</p>\n            <p>Rahul</p>\n            <p>Shilpa</p>\n\n\n    </body\n\n</html>" to include "<p1>Harshita</p1>"
+Diff:
+@@ -1,14 +1,27 @@
+-<p1>Harshita</p1>
++<html>
++    <body>
++
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p>Harshita</p>
++            <p>Meghna</p>
++            <p>Rahul</p>
++            <p>Shilpa</p>
++
++
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:44:in `block (3 levels) in <top (required)>'
+
+Finished in 0.11792 seconds (files took 0.21016 seconds to load)
+12 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/integration/application_spec.rb:41 # Application GET / returns an html list of names
+
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+returns an html list of names (FAILED - 1)
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Failures:
+
+1) Application GET / returns an html list of names
+Failure/Error: expect(response.body).to include('<p1>Harshita</p1>')
+
+expected "<html>\n    <body>\n            <p>Harshita</p>\n            <p>Meghna</p>\n            <p>Rahul</p>\n            <p>Shilpa</p>\n    </body\n\n</html>" to include "<p1>Harshita</p1>"
+Diff:
+@@ -1,9 +1,17 @@
+-<p1>Harshita</p1>
++<html>
++    <body>
++            <p>Harshita</p>
++            <p>Meghna</p>
++            <p>Rahul</p>
++            <p>Shilpa</p>
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:44:in `block (3 levels) in <top (required)>'
+
+Finished in 0.12459 seconds (files took 0.22221 seconds to load)
+12 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/integration/application_spec.rb:41 # Application GET / returns an html list of names
+
+➜  music_library_database_app git:(main) ✗ 
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+returns an html list of names (FAILED - 1)
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Failures:
+
+1) Application GET / returns an html list of names
+Failure/Error: expect(response.body).to include('<p1>Shilpa</p>')
+
+expected "<html>\n    <body>\n            <p>Harshita</p>\n            <p>Meghna</p>\n            <p>Rahul</p>\n            <p>Shilpa</p>\n    </body\n\n</html>" to include "<p1>Shilpa</p>"
+Diff:
+@@ -1,9 +1,17 @@
+-<p1>Shilpa</p>
++<html>
++    <body>
++            <p>Harshita</p>
++            <p>Meghna</p>
++            <p>Rahul</p>
++            <p>Shilpa</p>
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:47:in `block (3 levels) in <top (required)>'
+
+Finished in 0.12989 seconds (files took 0.22419 seconds to load)
+12 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/integration/application_spec.rb:41 # Application GET / returns an html list of names
+
+➜  music_library_database_app git:(main) ✗      
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+returns an html list of names
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Finished in 0.09373 seconds (files took 0.24118 seconds to load)
+12 examples, 0 failures
+
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+returns an html list of names
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Finished in 0.10828 seconds (files took 0.20579 seconds to load)
+12 examples, 0 failures
+
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+returns an html list of names
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Finished in 0.11597 seconds (files took 0.15843 seconds to load)
+12 examples, 0 failures
+
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+returns the html hello message with a different name
+returns an html list of names
+GET /
+returns the html hello message with the given name
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Finished in 0.11444 seconds (files took 0.21999 seconds to load)
+14 examples, 0 failures
+
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+returns the html hello message with a different name
+returns an html list of names
+returns a hello page if the password is correct (FAILED - 1)
+returns a forbidden page if the password is incorrect (FAILED - 2)
+GET /
+returns the html hello message with the given name
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Failures:
+
+1) Application GET / returns a hello page if the password is correct
+Failure/Error: expect(response.body).to include('Hello!')
+
+expected "<html>\n    <body>\n         <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic ...hul</p>\n            <p>Shilpa</p>\n\n             <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "Hello!"
+Diff:
+@@ -1,14 +1,27 @@
+-Hello!
++<html>
++    <body>
++         <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p>Harshita</p>
++            <p>Meghna</p>
++            <p>Rahul</p>
++            <p>Shilpa</p>
++
++             <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:54:in `block (3 levels) in <top (required)>'
+
+2) Application GET / returns a forbidden page if the password is incorrect
+Failure/Error: expect(response.body).to include('Access forbidden!')
+
+expected "<html>\n    <body>\n         <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic ...hul</p>\n            <p>Shilpa</p>\n\n             <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "Access forbidden!"
+Diff:
+@@ -1,14 +1,27 @@
+-Access forbidden!
++<html>
++    <body>
++         <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p>Harshita</p>
++            <p>Meghna</p>
++            <p>Rahul</p>
++            <p>Shilpa</p>
++
++             <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:61:in `block (3 levels) in <top (required)>'
+
+Finished in 0.12678 seconds (files took 0.24034 seconds to load)
+16 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/integration/application_spec.rb:51 # Application GET / returns a hello page if the password is correct
+rspec ./spec/integration/application_spec.rb:58 # Application GET / returns a forbidden page if the password is incorrect
+
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+returns the html hello message with a different name
+returns an html list of names
+returns a hello page if the password is correct
+returns a forbidden page if the password is incorrect (FAILED - 1)
+GET /
+returns the html hello message with the given name
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Failures:
+
+1) Application GET / returns a forbidden page if the password is incorrect
+Failure/Error: expect(response.body).to include('Access forbidden!')
+
+expected "<html>\n    <body>\n         <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic ...assword criteria</p>\n      \n\n\n\n\n             <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "Access forbidden!"
+Diff:
+@@ -1,21 +1,41 @@
+-Access forbidden!
++<html>
++    <body>
++         <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p>Harshita</p>
++            <p>Meghna</p>
++            <p>Rahul</p>
++            <p>Shilpa</p>
++
++
++            <p> If loop here for password criteria</p>
++      
++
++
++
++
++             <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:61:in `block (3 levels) in <top (required)>'
+
+Finished in 0.1363 seconds (files took 0.23804 seconds to load)
+16 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/integration/application_spec.rb:58 # Application GET / returns a forbidden page if the password is incorrect
+
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+returns the html hello message with a different name
+returns an html list of names
+returns a hello page if the password is correct
+returns a forbidden page if the password is incorrect (FAILED - 1)
+GET /
+returns the html hello message with the given name
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Failures:
+
+1) Application GET / returns a forbidden page if the password is incorrect
+Failure/Error: expect(response.body).to include('Access forbidden!')
+
+expected "<html>\n    <body>\n         <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic ...p here for password criteria</p>\n\n\n             <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "Access forbidden!"
+Diff:
+@@ -1,18 +1,35 @@
+-Access forbidden!
++<html>
++    <body>
++         <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p>Harshita</p>
++            <p>Meghna</p>
++            <p>Rahul</p>
++            <p>Shilpa</p>
++
++
++            <p> If loop here for password criteria</p>
++
++
++             <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:61:in `block (3 levels) in <top (required)>'
+
+Finished in 0.11365 seconds (files took 0.21658 seconds to load)
+16 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/integration/application_spec.rb:58 # Application GET / returns a forbidden page if the password is incorrect
+
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+returns the html hello message with a different name
+returns an html list of names
+returns a hello page if the password is correct (FAILED - 1)
+returns a forbidden page if the password is incorrect (FAILED - 2)
+GET /
+returns the html hello message with the given name
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Failures:
+
+1) Application GET / returns a hello page if the password is correct
+Failure/Error: expect(response.body).to include('Hello!')
+
+expected "<html>\n    <body>\n         <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic ...password criteria</p>\n         \n\n\n             <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "Hello!"
+Diff:
+@@ -1,19 +1,37 @@
+-Hello!
++<html>
++    <body>
++         <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p>Harshita</p>
++            <p>Meghna</p>
++            <p>Rahul</p>
++            <p>Shilpa</p>
++
++
++            <p> If loop here for password criteria</p>
++         
++
++
++             <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:54:in `block (3 levels) in <top (required)>'
+
+2) Application GET / returns a forbidden page if the password is incorrect
+Failure/Error: expect(response.body).to include('Access forbidden!')
+
+expected "<html>\n    <body>\n         <h1> Hello !</h1>\n\n        <p> Having arrays and making them dynamic ...p here for password criteria</p>\n\n\n             <img src=\"hello.jpg\" />\n    </body\n\n</html>" to include "Access forbidden!"
+Diff:
+@@ -1,18 +1,35 @@
+-Access forbidden!
++<html>
++    <body>
++         <h1> Hello !</h1>
++
++        <p> Having arrays and making them dynamic as loop</p>
++            <p>Harshita</p>
++            <p>Meghna</p>
++            <p>Rahul</p>
++            <p>Shilpa</p>
++
++
++            <p> If loop here for password criteria</p>
++
++
++             <img src="hello.jpg" />
++    </body
++
++</html>
+
+# ./spec/integration/application_spec.rb:61:in `block (3 levels) in <top (required)>'
+
+Finished in 0.12926 seconds (files took 0.25155 seconds to load)
+16 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/integration/application_spec.rb:51 # Application GET / returns a hello page if the password is correct
+rspec ./spec/integration/application_spec.rb:58 # Application GET / returns a forbidden page if the password is incorrect
+
+➜  music_library_database_app git:(main) ✗ 
+➜  music_library_database_app git:(main) ✗ 
+➜  music_library_database_app git:(main) ✗ 
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+returns the html hello message with a different name
+returns an html list of names
+returns a hello page if the password is correct
+returns a forbidden page if the password is incorrect
+GET /
+returns the html hello message with the given name
+GET /albums
+should return the list of albums
+POST /albums
+should create a new album
+GET /artists
+should return the list of artists
+POST /artists
+should create a new artist
+
+Finished in 0.10967 seconds (files took 0.23379 seconds to load)
+16 examples, 0 failures
+
+➜  music_library_database_app git:(main) ✗ 
+==========
+
+
+
+e.g 1
+http://localhost:9292/?name=Harsha&password=abcd
+
+#### NOTE: AS WE SEE HERE PASSWORD IS PASSED IN ADDRESS IN GET METHOD AND IS VISIBLE TO EVERYONE! SO WE WANT IN POST METHOD INSTEAD
+
+Hello Harsha!
+Having arrays and making them dynamic as loop
+
+Harshita
+
+Meghna
+
+Rahul
+
+Shilpa
+
+If loop here for password criteria
+
+Hello! 
+
+
+e.g 2
+http://localhost:9292/?name=Harsha&password=ajdjchjhd
+
+#### NOTE: AS WE SEE HERE PASSWORD IS PASSED IN ADDRESS IN GET METHOD AND IS VISIBLE TO EVERYONE! SO WE WANT IN POST METHOD INSTEAD
+
+
+Hello Harsha!
+Having arrays and making them dynamic as loop
+
+Harshita
+
+Meghna
+
+Rahul
+
+Shilpa
+
+If loop here for password criteria
+
+Access forbidden! 
