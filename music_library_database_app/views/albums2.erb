@@ -1,2 +1,29 @@
-<% @album.each do |album| %><a href="/albums/<%= album.id %>"><%= album.title %></a><br />
-    <% end %>
+<html>
+<head>
+    <title> 
+        Web Apps Phase 3 - Ch 2 - Challenge - Test-drive and update the GET /albums route so it returns the list of albums as an HTML page.
+     </title>
+</head>
+
+    <body>
+         <h1>Albums</h1>
+
+
+         <% @album.each do |album| %>
+
+            <% end %>
+            
+
+            <% @album.map do |album|  %>
+
+                <! -- added the below hyperlink for Ch3 link test to the Ch2's Titles as HTML album list-->
+            <div> Title: <a href="/albums/<%= album.id %>"><%= album.title %></a><br />
+                Released: <%= album.release_year %>
+            <br>
+            </div>
+            <% end %>
+
+
+    </body
+
+</html>
