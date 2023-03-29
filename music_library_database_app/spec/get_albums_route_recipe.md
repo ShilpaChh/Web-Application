@@ -117,6 +117,38 @@ end
   </body>
 </html>
 
+
+# Phase 3 - Ch2 - Test-drive and update the GET /albums route so it returns the list of albums as an HTML page:
+    <!-- TABLEPLUS:
+    SELECT * FROM albums;
+    delete from albums where title='' or title is null; # 4 rows deleted
+    commit;
+
+    http://localhost:9292/albums
+    Doolittle, Surfer Rosa, Waterloo, Super Trouper, Bossanova, Lover, Folklore, I Put a Spell on You, Baltimore, Here Comes the Sun, Fodder on My Wings, Ring Ring, Ok Computer -->
+
+<!-- GET /albums -->
+
+<html>
+  <head></head>
+  <body>
+    <h1>Albums</h1>
+
+    <div>
+      Title: Doolittle
+      Released: 1989
+    </div>
+
+    <div>
+      Title: Surfer Rosa
+      Released: 1988
+    </div>
+
+    <!-- ... -->
+  </body>
+</html>
+
+
 ## 5. Implement the Route
 
 Write the route and web server code to implement the route behaviour.

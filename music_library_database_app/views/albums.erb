@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title> 
+        Web Apps Phase 3 - Ch 2 - Challenge - Test-drive and update the GET /albums route so it returns the list of albums as an HTML page.
+     </title>
+</head>
+
+    <body>
+         <h1>Albums</h1>
+
+            <% @album.map do |album|  %>
+
+            <div> Title: <%= album.title %>
+            <br>
+                Released: <%= album.release_year %>
+            <br>
+            </div>
+            <% end %>
+
+
+    </body
+
+</html>

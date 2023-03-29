@@ -11,7 +11,7 @@ describe Application do
   let(:app) { Application.new }
 
   # PHASE 3 - Ch1 - USING HTML TO CREATE WEBPAGES:
-   context 'GET /' do
+  #  context 'GET /' do
   #   it 'returns the html index' do
   #     response = get('/')
 
@@ -28,7 +28,6 @@ describe Application do
 
           expect(response.body).to include('<h1> Hello Shilpa!</h1>')
         end
-      end
 
       # another variation:
         it 'returns the html hello message with a different name' do
@@ -87,7 +86,7 @@ describe Application do
     
 
   context 'GET /albums' do
-    it 'should return the list of albums' do
+    xit 'should return the list of albums' do # skipping this as the following test has the ask for albums to be in HTML format.. 
       response = get('/albums')
 
       expected_response = 'Surfer Rosa, Waterloo, Super Trouper, Bossanova, Lover, Folklore, I Put a Spell on You, Baltimore, Here Comes the Sun, Fodder on My Wings, Ring Ring'
@@ -98,9 +97,22 @@ describe Application do
 
       # now implement this in sinatra app.rb
     end
+
+    # Web Apps Phase 3 - Ch 2 - Challenge
+    it 'returns the list of albums as an HTML page' do
+      response = get('/albums')
+
+      expect(response.status).to eq(200)
+      expect(response.body).to include('<h1>Albums</h1>')
+      expect(response.body).to include('Title: Surfer Rosa')
+      expect(response.body).to include('Released: 1988')
+      expect(response.body).to include('Title: Waterloo')
+      expect(response.body).to include('Released: 1974')
   end
 
-  context 'POST /albums' do
+  end
+
+  context "POST /albums" do
     it 'should create a new album' do
       response = post('/albums', 
         title: 'OK Computer', 
