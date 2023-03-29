@@ -18,9 +18,9 @@ class Application < Sinatra::Base
     # PHASE 3 - USING HTML TO CREATE WEBPAGES:
     get '/' do
 
-      # return 'Hello'
-        # @name = 'Shilpa' # to make this dynamic have this and call in .erb file
-        # @cohort_name = 'Feb 2023' # to make this dynamic have this and call in .erb file
+    #   # return 'Hello'
+    #     # @name = 'Shilpa' # to make this dynamic have this and call in .erb file
+    #     # @cohort_name = 'Feb 2023' # to make this dynamic have this and call in .erb file
 
            @name = params[:name]
 
@@ -32,6 +32,16 @@ class Application < Sinatra::Base
 
       return erb(:index) # in reference to the views -> index.erb file we have just created
     end
+
+    # Web App - Phase 3 - Ch3 - Using links - theory
+    # get '/' do
+    #   return erb(:index1)
+    # end
+
+    # get '/about' do
+    #   return erb(:about)
+    # end
+
 
     # get '/albums' do
     #   repo = AlbumRepository.new
@@ -73,15 +83,24 @@ class Application < Sinatra::Base
       end
 
       # Phase 3 - Ch2 - Challenge - list of albums as an HTML page
+        # get '/albums' do
+        #   repo = AlbumRepository.new
+    
+        #   @album = repo.all
+        
+        #   return erb(:albums)
+        # end
+  
+      # Web App - Phase 3 - Ch3 - Using links
         get '/albums' do
           repo = AlbumRepository.new
-    
+
           @album = repo.all
         
-          return erb(:albums)
+          return erb(:albums2)
         end
-  
         
+
       post '/albums' do
         repo = AlbumRepository.new
         new_album = Album.new

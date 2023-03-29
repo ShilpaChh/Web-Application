@@ -99,7 +99,7 @@ describe Application do
     end
 
     # Web Apps Phase 3 - Ch 2 - Challenge
-    it 'returns the list of albums as an HTML page' do
+    xit 'returns the list of albums as an HTML page' do
       response = get('/albums')
 
       expect(response.status).to eq(200)
@@ -108,7 +108,19 @@ describe Application do
       expect(response.body).to include('Released: 1988')
       expect(response.body).to include('Title: Waterloo')
       expect(response.body).to include('Released: 1974')
-  end
+    end
+
+    # Web App - Phase 3 - Ch3 - Using links
+    it 'should have hyperlink to individual albums' do # skipping this as the following test has the ask for albums to be in HTML format.. 
+      response = get('/albums')
+
+      expect(response.status).to eq(200)
+      expect(response.body).to include('a href="/albums/2">Surfer Rosa</a><br />')
+      expect(response.body).to include('a href="/albums/3">Waterloo</a><br />')
+      expect(response.body).to include('a href="/albums/4">Super Trouper</a><br />')
+      expect(response.body).to include('a href="/albums/5">Bossanova</a><br />')
+    end
+
 
   end
 
