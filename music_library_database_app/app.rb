@@ -48,12 +48,26 @@ class Application < Sinatra::Base
             # rackup again and then Postman -> http://localhost:9292/albums => displays list all the albums
       end
 
-      # Ch2 - implement a GET /albums/:id 
+      # Phase 3 - Ch2 - implement a GET /albums/:id 
       get '/albums/:id' do
         repo = AlbumRepository.new
-        @album = repo.find(params[:id])
+        artist_repo = ArtistRepository.new
+
+        @album = repo.find(params[:id]) # finding the album first
+        @artist = artist_repo.find(@album.artist_id) # Then finding the artist from artist_id from album
   
         return erb(:album)
+
+                    # o/p: Dynamic albums results:
+                    # http://localhost:9292/albums/1
+                    # Ch2 - Test-drive and implement a GET /albums/:id route
+                    # Doolittle
+                    # Release year: 1989 Artist: Pixies
+                      # http://localhost:9292/albums/7
+                      # Ch2 - Test-drive and implement a GET /albums/:id route
+                      # Folklore
+                      # Release year: 2020 Artist: Taylor Swift
+
       end
 
       post '/albums' do

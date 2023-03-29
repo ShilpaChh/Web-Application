@@ -64,15 +64,15 @@ describe Application do
     end
 
 
-      # WEB APPS - CH2 - Exercise: Test-drive and implement a GET /albums/:id route so it returns the HTML content for a single album:
+      # WEB APPS - Phase 3 - CH2 - Exercise: Test-drive and implement a GET /albums/:id route so it returns the HTML content for a single album:
 
       context "GET /albums/:id" do
         it 'should return info about album 1' do
-          response = get('albums/1')
+          response = get('albums/2')
 
           expect(response.status).to eq(200)
-          expect(response.body).to include('<h1>Doolittle</h1>')
-          expect(response.body).to include('Release year: 1989')
+          expect(response.body).to include('<h1>Surfer Rosa</h1>')
+          expect(response.body).to include('Release year: 1988')
           expect(response.body).to include('Artist: Pixies')
 
           # <h1>Doolittle</h1>

@@ -90,7 +90,7 @@ describe Application do
 end
 ```
 
-# WEB APPS - CH2 - Exercise: Test-drive and implement a GET /albums/:id route so it returns the HTML content for a single album:
+# WEB APPS - Phase 3 - CH2 - Exercise: Test-drive and implement a GET /albums/:id route so it returns the HTML content for a single album:
 <!-- Example for GET /albums/1 -->
 
 <html>
