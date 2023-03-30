@@ -66,7 +66,7 @@ describe Application do
       # WEB APPS - Phase 3 - CH2 - Exercise: Test-drive and implement a GET /albums/:id route so it returns the HTML content for a single album:
 
       context "GET /albums/:id" do
-        it 'should return info about album 1' do
+        it 'should return info about album 2' do
           response = get('albums/2')
 
           expect(response.status).to eq(200)
@@ -124,6 +124,47 @@ describe Application do
 
   end
 
+
+  # CH5 - Test-driving CRUD routes - Challenge - 1. Test-drive a route GET /artists, which returns the list of artists:
+  context 'GET /artists' do
+    xit 'should return the list of artists' do
+      response = get('/artists')
+
+      expected_response = 'Pixies, ABBA, Taylor Swift, Nina Simone, Kiasmos'
+
+      expect(response.status).to eq(200)
+      expect(response.body).to eq(expected_response)
+      # now implement this in sinatra => app.rb
+    end
+
+    # Phase 3 - Ch3 - Challenge: Test-drive a route GET /artists which returns an HTML page with the list of artists. 
+    # This page should contain a link for each artist listed, linking to /artists/:id where :id needs to be the corresponding artist id.
+    it 'should have hyperlink to individual artists' do # skipping this as the following test has the ask for albums to be in HTML format.. 
+      response = get('/artists')
+
+      expect(response.status).to eq(200)
+      expect(response.body).to include('a href="/artists/2">ABBA</a><br />')
+      expect(response.body).to include('a href="/artists/3">Taylor Swift</a><br />')
+      expect(response.body).to include('a href="/artists/4">Nina Simone</a><br />')
+      # expect(response.body).to include('a href="/artists/5">Wild nothing</a><br />')
+    end
+
+  end
+
+  # Phase 3 - Ch3 - Challenge: Test-drive a route GET /artists/:id which returns an HTML page showing details for a single artist.
+  context "GET /artists/:id" do
+    it 'should return info about second artist' do
+      response = get('artists/2')
+
+      expect(response.status).to eq(200)
+      expect(response.body).to include('<h1>ABBA</h1>')
+      expect(response.body).to include('ABBA')
+      expect(response.body).to include('Genre: Pop')
+    end
+  end
+  
+
+
   context "POST /albums" do
     it 'should create a new album' do
       response = post('/albums', 
@@ -143,19 +184,6 @@ describe Application do
           expect(response.body).to include('OK Computer')
     end
           # rspec
-  end
-
-  # CH5 - Test-driving CRUD routes - Challenge - 1. Test-drive a route GET /artists, which returns the list of artists:
-  context 'GET /artists' do
-    it 'should return the list of artists' do
-      response = get('/artists')
-
-      expected_response = 'Pixies, ABBA, Taylor Swift, Nina Simone, Kiasmos'
-
-      expect(response.status).to eq(200)
-      expect(response.body).to eq(expected_response)
-      # now implement this in sinatra => app.rb
-    end
   end
 
     # CH5 - Test-driving CRUD routes - Challenge - 2. Test-drive a route POST /artists, which creates a new artist in the database. Your test should verify the new artist is returned in the response of GET /artists.

@@ -100,35 +100,56 @@ class Application < Sinatra::Base
           return erb(:albums2)
         end
         
-
-      post '/albums' do
-        repo = AlbumRepository.new
-        new_album = Album.new
-        new_album.title = params[:title]
-        new_album.release_year = params[:release_year]
-        new_album.artist_id = params[:artist_id]
-      
-        repo.create(new_album)
-          return ''
-              # rspec => also, can chk on Postman:
-              # rackup again and then Postman ->Posts => http://localhost:9292/albums => body => form data => enter the Ok Computer and its details => sends => GET -> sends, shows new album, 'OK Computer'
-        end
-
         # CH5 - Challenge - Test-drive a route GET /artists, which returns the list of artists:
+        # get '/artists' do
+        #   repo = ArtistRepository.new
+        #   artists = repo.all
+        
+        #   response = artists.map do |artist| 
+        #     artist.name
+        #   end.join(', ')
+        #     return response
+        #         # Application
+        #           # GET /albums
+        #           # should return the list of albums
+        #         # also, can chk on Postman:
+        #         # rackup again and then Postman -> GET =>  http://localhost:9292/artists => displays list all the artists => Pixies, ABBA, Taylor Swift, Nina Simone
+        #   end
+
+        # Phase 3 - Ch3 - Challenge: Test-drive a route GET /artists which returns an HTML page with the list of artists. 
         get '/artists' do
           repo = ArtistRepository.new
-          artists = repo.all
+
+          @artists = repo.all
         
-          response = artists.map do |artist| 
-            artist.name
-          end.join(', ')
-            return response
-                # Application
-                  # GET /albums
-                  # should return the list of albums
-                # also, can chk on Postman:
-                # rackup again and then Postman -> GET =>  http://localhost:9292/artists => displays list all the artists => Pixies, ABBA, Taylor Swift, Nina Simone
+          return erb(:artists1)
+        end
+
+          # Phase 3 - Ch3 - Challenge: Test-drive a route GET /artists/:id which returns an HTML page showing details for a single artist.
+          get '/artists/:id' do
+            repo = ArtistRepository.new
+            artist_id = params[:id]
+    
+            @artist = repo.find(artist_id)
+      
+            return erb(:artist)
           end
+
+
+          post '/albums' do
+            repo = AlbumRepository.new
+            new_album = Album.new
+            new_album.title = params[:title]
+            new_album.release_year = params[:release_year]
+            new_album.artist_id = params[:artist_id]
+          
+            repo.create(new_album)
+              return ''
+                  # rspec => also, can chk on Postman:
+                  # rackup again and then Postman ->Posts => http://localhost:9292/albums => body => form data => enter the Ok Computer and its details => sends => GET -> sends, shows new album, 'OK Computer'
+            end
+    
+
 
     # CH5 - Test-driving CRUD routes - Challenge - 2. Test-drive a route POST /artists, which creates a new artist in the database. Your test should verify the new artist is returned in the response of GET /artists.
           post '/artists' do

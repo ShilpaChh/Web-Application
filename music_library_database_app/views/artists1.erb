@@ -1,0 +1,159 @@
+<html>
+<head>
+    <title> 
+        Web Apps Phase 3 - Ch3 - Challenge: Test-drive a route GET /artists which returns an HTML page with the list of artists. 
+        </title>
+</head>
+    <body>
+            <h1>Artists</h1>
+
+            <% @artists.each do |artist| %>
+
+            <% end %>
+            
+
+            <% @artists.map do |artist|  %>
+
+                <! -- added the below hyperlink for Ch3 link test to the Ch2's Titles as HTML album list-->
+            <div> Name: <a href="/artists/<%= artist.id %>"><%= artist.name %></a><br />
+                Genre: <%= artist.genre %>
+            <br>
+            </div>
+            <% end %>
+
+    </body
+
+</html>        
+
+
+
+<!--
+http://localhost:9292/artists
+Artists
+Name: Pixies
+Genre: Rock
+Name: ABBA
+Genre: Pop
+Name: Taylor Swift
+Genre: Pop
+Name: Nina Simone
+Genre: Pop
+Name: Wild nothing
+Genre: Indie
+
+http://localhost:9292/artists/4
+Phase 3 - Ch3 - Test-drive and implement a GET /artists/:id route
+Nina Simone
+Genre: Pop
+
+Go to the Artists page
+
+•••••••••
+➜  music_library_database_app git:(main) ✗ rspec 
+
+AlbumRepository
+  finds all albums
+  finds one album
+  creates an album
+  deletes an album
+
+ArtistRepository
+  finds all artists
+  finds one artist
+  creates an album
+
+Application
+  GET /
+    returns the html hello message with the given name
+    returns the html hello message with a different name
+    returns an html list of names
+    returns a hello page if the password is correct
+    returns a forbidden page if the password is incorrect
+  GET /albums/:id
+    should return info about album 2
+  GET /albums
+    should return the list of albums (PENDING: Temporarily skipped with xit)
+    returns the list of albums as an HTML page (PENDING: Temporarily skipped with xit)
+    should have hyperlink to individual albums
+  GET /artists
+    should return the list of artists (PENDING: Temporarily skipped with xit)
+    should have hyperlink to individual artists
+  GET /artists/:id
+    should return info about second artist
+  POST /albums
+    should create a new album
+  POST /artists
+    should create a new artist
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) Application GET /albums should return the list of albums
+     # Temporarily skipped with xit
+     # ./spec/integration/application_spec.rb:89
+
+  2) Application GET /albums returns the list of albums as an HTML page
+     # Temporarily skipped with xit
+     # ./spec/integration/application_spec.rb:102
+
+  3) Application GET /artists should return the list of artists
+     # Temporarily skipped with xit
+     # ./spec/integration/application_spec.rb:130
+
+
+Finished in 0.11799 seconds (files took 0.17228 seconds to load)
+21 examples, 0 failures, 3 pending
+
+➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+  finds all albums
+  finds one album
+  creates an album
+  deletes an album
+
+ArtistRepository
+  finds all artists
+  finds one artist
+  creates an album
+
+Application
+  GET /
+    returns the html hello message with the given name
+    returns the html hello message with a different name
+    returns an html list of names
+    returns a hello page if the password is correct
+    returns a forbidden page if the password is incorrect
+  GET /albums/:id
+    should return info about album 2
+  GET /albums
+    should return the list of albums (PENDING: Temporarily skipped with xit)
+    returns the list of albums as an HTML page (PENDING: Temporarily skipped with xit)
+    should have hyperlink to individual albums
+  GET /artists
+    should return the list of artists (PENDING: Temporarily skipped with xit)
+    should have hyperlink to individual artists
+  GET /artists/:id
+    should return info about second artist
+  POST /albums
+    should create a new album
+  POST /artists
+    should create a new artist
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) Application GET /albums should return the list of albums
+     # Temporarily skipped with xit
+     # ./spec/integration/application_spec.rb:89
+
+  2) Application GET /albums returns the list of albums as an HTML page
+     # Temporarily skipped with xit
+     # ./spec/integration/application_spec.rb:102
+
+  3) Application GET /artists should return the list of artists
+     # Temporarily skipped with xit
+     # ./spec/integration/application_spec.rb:130
+
+
+Finished in 0.10301 seconds (files took 0.2671 seconds to load)
+21 examples, 0 failures, 3 pending
+-->
