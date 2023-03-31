@@ -1,0 +1,451 @@
+➜  postcode_checker_app git:(main) ✗ rspec
+
+Application
+  GET /
+    should get the form (FAILED - 1)
+  POST /check
+    should get valid postcode result (FAILED - 2)
+    should get invalid postcode result (FAILED - 3)
+    should have a link to go back to the homepage (FAILED - 4)
+
+PostcodeChecker
+  is a valid postcode
+  is a valid postcode
+  is not valid postcode
+  is not valid postcode
+
+Failures:
+
+  1) Application GET / should get the form
+     Failure/Error: expect(response.body).to include('<input type="text" name="postcode" />')
+     
+       expected "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=utf-8>\n  <title>Postcode Checker</titl...t type=\"text\" name=\"post_code\" />\n\n    <input type=\"submit\" />\n  </form>\n</body>\n</html>" to include "<input type=\"text\" name=\"postcode\" />"
+       Diff:
+       @@ -1,16 +1,31 @@
+       -<input type="text" name="postcode" />
+       +<!DOCTYPE html>
+       +<html lang="en">
+       +<head>
+       +  <meta charset=utf-8>
+       +  <title>Postcode Checker</title>
+       +</head>
+       +<body>
+       +  <h1>Postcode Checker</h1>
+       +
+       +  <form action="/check" method="POST">
+       +    <input type="text" name="post_code" />
+       +
+       +    <input type="submit" />
+       +  </form>
+       +</body>
+       +</html>
+       
+     # ./spec/integration/app_spec.rb:19:in `block (3 levels) in <top (required)>'
+
+  2) Application POST /check should get valid postcode result
+     Failure/Error: expect(response.status).to eq(200)
+     
+       expected: 200
+            got: 404
+     
+       (compared using ==)
+     # ./spec/integration/app_spec.rb:27:in `block (3 levels) in <top (required)>'
+
+  3) Application POST /check should get invalid postcode result
+     Failure/Error: expect(response.status).to eq(200)
+     
+       expected: 200
+            got: 404
+     
+       (compared using ==)
+     # ./spec/integration/app_spec.rb:34:in `block (3 levels) in <top (required)>'
+
+  4) Application POST /check should have a link to go back to the homepage
+     Failure/Error: expect(response.status).to eq(200)
+     
+       expected: 200
+            got: 404
+     
+       (compared using ==)
+     # ./spec/integration/app_spec.rb:41:in `block (3 levels) in <top (required)>'
+
+Finished in 0.04144 seconds (files took 0.63804 seconds to load)
+8 examples, 4 failures
+
+Failed examples:
+
+rspec ./spec/integration/app_spec.rb:14 # Application GET / should get the form
+rspec ./spec/integration/app_spec.rb:24 # Application POST /check should get valid postcode result
+rspec ./spec/integration/app_spec.rb:31 # Application POST /check should get invalid postcode result
+rspec ./spec/integration/app_spec.rb:38 # Application POST /check should have a link to go back to the homepage
+
+➜  postcode_checker_app git:(main) ✗ rspec
+
+Application
+  GET /
+    should get the form (FAILED - 1)
+  POST /check
+    should get valid postcode result (PENDING: Temporarily skipped with xit)
+    should get invalid postcode result (PENDING: Temporarily skipped with xit)
+    should have a link to go back to the homepage (PENDING: Temporarily skipped with xit)
+
+PostcodeChecker
+  is a valid postcode
+  is a valid postcode
+  is not valid postcode
+  is not valid postcode
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) Application POST /check should get valid postcode result
+     # Temporarily skipped with xit
+     # ./spec/integration/app_spec.rb:24
+
+  2) Application POST /check should get invalid postcode result
+     # Temporarily skipped with xit
+     # ./spec/integration/app_spec.rb:31
+
+  3) Application POST /check should have a link to go back to the homepage
+     # Temporarily skipped with xit
+     # ./spec/integration/app_spec.rb:38
+
+
+Failures:
+
+  1) Application GET / should get the form
+     Failure/Error: expect(response.body).to include('<input type="text" name="postcode" />')
+     
+       expected "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=utf-8>\n  <title>Postcode Checker</titl...t type=\"text\" name=\"post_code\" />\n\n    <input type=\"submit\" />\n  </form>\n</body>\n</html>" to include "<input type=\"text\" name=\"postcode\" />"
+       Diff:
+       @@ -1,16 +1,31 @@
+       -<input type="text" name="postcode" />
+       +<!DOCTYPE html>
+       +<html lang="en">
+       +<head>
+       +  <meta charset=utf-8>
+       +  <title>Postcode Checker</title>
+       +</head>
+       +<body>
+       +  <h1>Postcode Checker</h1>
+       +
+       +  <form action="/check" method="POST">
+       +    <input type="text" name="post_code" />
+       +
+       +    <input type="submit" />
+       +  </form>
+       +</body>
+       +</html>
+       
+     # ./spec/integration/app_spec.rb:19:in `block (3 levels) in <top (required)>'
+
+Finished in 0.03832 seconds (files took 0.33437 seconds to load)
+8 examples, 1 failure, 3 pending
+
+Failed examples:
+
+rspec ./spec/integration/app_spec.rb:14 # Application GET / should get the form
+
+➜  postcode_checker_app git:(main) ✗ 
+➜  postcode_checker_app git:(main) ✗ rspec
+
+Application
+  GET /
+    should get the form (FAILED - 1)
+  POST /check
+    should get valid postcode result (PENDING: Temporarily skipped with xit)
+    should get invalid postcode result (PENDING: Temporarily skipped with xit)
+    should have a link to go back to the homepage (PENDING: Temporarily skipped with xit)
+
+PostcodeChecker
+  is a valid postcode
+  is a valid postcode
+  is not valid postcode
+  is not valid postcode
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) Application POST /check should get valid postcode result
+     # Temporarily skipped with xit
+     # ./spec/integration/app_spec.rb:24
+
+  2) Application POST /check should get invalid postcode result
+     # Temporarily skipped with xit
+     # ./spec/integration/app_spec.rb:31
+
+  3) Application POST /check should have a link to go back to the homepage
+     # Temporarily skipped with xit
+     # ./spec/integration/app_spec.rb:38
+
+
+Failures:
+
+  1) Application GET / should get the form
+     Failure/Error: expect(response.body).to include('<input type="text" name="postcode" />')
+     
+       expected "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=utf-8>\n  <title>Postcode Checker</titl...t type=\"text\" name=\"post_code\" />\n\n    <input type=\"submit\" />\n  </form>\n</body>\n</html>" to include "<input type=\"text\" name=\"postcode\" />"
+       Diff:
+       @@ -1,16 +1,31 @@
+       -<input type="text" name="postcode" />
+       +<!DOCTYPE html>
+       +<html lang="en">
+       +<head>
+       +  <meta charset=utf-8>
+       +  <title>Postcode Checker</title>
+       +</head>
+       +<body>
+       +  <h1>Postcode Checker</h1>
+       +
+       +  <form method="POST" action="/check" >
+       +    <input type="text" name="post_code" />
+       +
+       +    <input type="submit" />
+       +  </form>
+       +</body>
+       +</html>
+       
+     # ./spec/integration/app_spec.rb:19:in `block (3 levels) in <top (required)>'
+
+Finished in 0.03922 seconds (files took 0.33603 seconds to load)
+8 examples, 1 failure, 3 pending
+
+Failed examples:
+
+rspec ./spec/integration/app_spec.rb:14 # Application GET / should get the form
+
+➜  postcode_checker_app git:(main) ✗ rspec
+
+Application
+  GET /
+    should get the form (FAILED - 1)
+  POST /check
+    should get valid postcode result (PENDING: Temporarily skipped with xit)
+    should get invalid postcode result (PENDING: Temporarily skipped with xit)
+    should have a link to go back to the homepage (PENDING: Temporarily skipped with xit)
+
+PostcodeChecker
+  is a valid postcode
+  is a valid postcode
+  is not valid postcode
+  is not valid postcode
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) Application POST /check should get valid postcode result
+     # Temporarily skipped with xit
+     # ./spec/integration/app_spec.rb:24
+
+  2) Application POST /check should get invalid postcode result
+     # Temporarily skipped with xit
+     # ./spec/integration/app_spec.rb:31
+
+  3) Application POST /check should have a link to go back to the homepage
+     # Temporarily skipped with xit
+     # ./spec/integration/app_spec.rb:38
+
+
+Failures:
+
+  1) Application GET / should get the form
+     Failure/Error: expect(response.body).to include('<input type="text" name="postcode" />')
+     
+       expected "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=utf-8>\n  <title>Postcode Checker</titl...t type=\"text\" name=\"post_code\" />\n\n    <input type=\"submit\" />\n  </form>\n</body>\n</html>" to include "<input type=\"text\" name=\"postcode\" />"
+       Diff:
+       @@ -1,16 +1,31 @@
+       -<input type="text" name="postcode" />
+       +<!DOCTYPE html>
+       +<html lang="en">
+       +<head>
+       +  <meta charset=utf-8>
+       +  <title>Postcode Checker</title>
+       +</head>
+       +<body>
+       +  <h1>Postcode Checker</h1>
+       +
+       +  <form method="POST" action="/check" >
+       +    <input type="text" name="post_code" />
+       +
+       +    <input type="submit" />
+       +  </form>
+       +</body>
+       +</html>
+       
+     # ./spec/integration/app_spec.rb:19:in `block (3 levels) in <top (required)>'
+
+Finished in 0.03854 seconds (files took 0.33291 seconds to load)
+8 examples, 1 failure, 3 pending
+
+Failed examples:
+
+rspec ./spec/integration/app_spec.rb:14 # Application GET / should get the form
+
+➜  postcode_checker_app git:(main) ✗ 
+➜  postcode_checker_app git:(main) ✗ 
+➜  postcode_checker_app git:(main) ✗ 
+➜  postcode_checker_app git:(main) ✗ rackup
+[2023-03-31 10:41:48] INFO  WEBrick 1.8.1
+[2023-03-31 10:41:48] INFO  ruby 3.0.0 (2020-12-25) [arm64-darwin21]
+/Users/shilpachhabra/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0/socket.rb:201:in `bind': Address already in use - bind(2) for 127.0.0.1:9292 (Errno::EADDRINUSE)
+        from /Users/shilpachhabra/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0/socket.rb:201:in `listen'
+        from /Users/shilpachhabra/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0/socket.rb:765:in `block in tcp_server_sockets'
+        from /Users/shilpachhabra/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0/socket.rb:227:in `each'
+        from /Users/shilpachhabra/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0/socket.rb:227:in `foreach'
+        from /Users/shilpachhabra/.rvm/rubies/ruby-3.0.0/lib/ruby/3.0.0/socket.rb:763:in `tcp_server_sockets'
+        from /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/webrick-1.8.1/lib/webrick/utils.rb:60:in `create_listeners'
+        from /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/webrick-1.8.1/lib/webrick/server.rb:130:in `listen'
+        from /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/webrick-1.8.1/lib/webrick/server.rb:111:in `initialize'
+        from /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/webrick-1.8.1/lib/webrick/httpserver.rb:47:in `initialize'
+        from /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rack-2.2.6.4/lib/rack/handler/webrick.rb:38:in `new'
+        from /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rack-2.2.6.4/lib/rack/handler/webrick.rb:38:in `run'
+        from /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rack-2.2.6.4/lib/rack/server.rb:327:in `start'
+        from /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rack-2.2.6.4/lib/rack/server.rb:168:in `start'
+        from /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/gems/rack-2.2.6.4/bin/rackup:5:in `<top (required)>'
+        from /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/bin/rackup:23:in `load'
+        from /Users/shilpachhabra/.rvm/gems/ruby-3.0.0/bin/rackup:23:in `<main>'
+➜  postcode_checker_app git:(main) ✗ rspec 
+
+Application
+  GET /
+    should get the form (FAILED - 1)
+  POST /check
+    should get valid postcode result (FAILED - 2)
+    should get invalid postcode result
+    should have a link to go back to the homepage
+
+PostcodeChecker
+  is a valid postcode
+  is a valid postcode
+  is not valid postcode
+  is not valid postcode
+
+Failures:
+
+  1) Application GET / should get the form
+     Failure/Error: expect(response.body).to include('<input type="text" name="postcode" />')
+     
+       expected "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=utf-8>\n  <title>Postcode Checker</titl...t type=\"text\" name=\"post_code\" />\n\n    <input type=\"submit\" />\n  </form>\n</body>\n</html>" to include "<input type=\"text\" name=\"postcode\" />"
+       Diff:
+       @@ -1,16 +1,31 @@
+       -<input type="text" name="postcode" />
+       +<!DOCTYPE html>
+       +<html lang="en">
+       +<head>
+       +  <meta charset=utf-8>
+       +  <title>Postcode Checker</title>
+       +</head>
+       +<body>
+       +  <h1>Postcode Checker</h1>
+       +
+       +  <form method="POST" action="/check" >
+       +    <input type="text" name="post_code" />
+       +
+       +    <input type="submit" />
+       +  </form>
+       +</body>
+       +</html>
+       
+     # ./spec/integration/app_spec.rb:19:in `block (3 levels) in <top (required)>'
+
+  2) Application POST /check should get valid postcode result
+     Failure/Error: expect(response.body).to include('This is a valid postcode')
+     
+       expected "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=utf-8>\n  <title>Postcode Checker</titl...Back to the homepage</a>\n\n  <div>\n      This is not a valid postcode\n  </div>\n</body>\n</html>" to include "This is a valid postcode"
+       Diff:
+       @@ -1,16 +1,31 @@
+       -This is a valid postcode
+       +<!DOCTYPE html>
+       +<html lang="en">
+       +<head>
+       +  <meta charset=utf-8>
+       +  <title>Postcode Checker</title>
+       +</head>
+       +<body>
+       +  <h1>Result</h1>
+       +
+       +  <a href="/">Back to the homepage</a>
+       +
+       +  <div>
+       +      This is not a valid postcode
+       +  </div>
+       +</body>
+8 examples, 2 failures
+
+Failed examples:
+
+rspec ./spec/integration/app_spec.rb:14 # Application GET / should get the form
+rspec ./spec/integration/app_spec.rb:24 # Application POST /check should get valid postcode result
+
+➜  postcode_checker_app git:(main) ✗ irb
+3.0.0 :001 > 
+3.0.0 :002 > 
+3.0.0 :003 > 
+3.0.0 :004 > 
+3.0.0 :005 > exit
+➜  postcode_checker_app git:(main) ✗ rspec
+
+Application
+  GET /
+    should get the form
+  POST /check
+    should get valid postcode result (FAILED - 1)
+    should get invalid postcode result
+    should have a link to go back to the homepage
+
+PostcodeChecker
+  is a valid postcode
+  is a valid postcode
+  is not valid postcode
+  is not valid postcode
+
+Failures:
+
+  1) Application POST /check should get valid postcode result
+     Failure/Error: expect(response.body).to include('This is a valid postcode')
+     
+       expected "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=utf-8>\n  <title>Postcode Checker</titl...Back to the homepage</a>\n\n  <div>\n      This is not a valid postcode\n  </div>\n</body>\n</html>" to include "This is a valid postcode"
+       Diff:
+       @@ -1,16 +1,31 @@
+       -This is a valid postcode
+       +<!DOCTYPE html>
+       +<html lang="en">
+       +<head>
+       +  <meta charset=utf-8>
+       +  <title>Postcode Checker</title>
+       +</head>
+       +<body>
+       +  <h1>Result</h1>
+       +
+       +  <a href="/">Back to the homepage</a>
+       +
+       +  <div>
+       +      This is not a valid postcode
+       +  </div>
+       +</body>
+       +</html>
+       
+     # ./spec/integration/app_spec.rb:29:in `block (3 levels) in <top (required)>'
+
+Finished in 0.04462 seconds (files took 0.33447 seconds to load)
+8 examples, 1 failure
+
+Failed examples:
+
+rspec ./spec/integration/app_spec.rb:25 # Application POST /check should get valid postcode result
+
+➜  postcode_checker_app git:(main) ✗ rspec
+
+Application
+  GET /
+    should get the form
+  POST /check
+    should get valid postcode result
+    should get invalid postcode result
+    should have a link to go back to the homepage
+
+PostcodeChecker
+  is a valid postcode
+  is a valid postcode
+  is not valid postcode
+  is not valid postcode
+
+Finished in 0.03502 seconds (files took 0.33602 seconds to load)
+8 examples, 0 failures
