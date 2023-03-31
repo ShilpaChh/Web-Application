@@ -25,16 +25,19 @@ describe Application do
 
     context 'POST /' do
       it 'should add the new post' do
-        _response = post(
+        # _response = post(
+
+        response = post(
           '/posts',
           title: 'A new post',
           content: 'Hi there',
           tags: 'random,things'
         )
 
-        response = get('/')
+         response = get('/')
 
-        expect(response.body).to include('<h3>A new post</h3>')
+         expect(response.body).to include('<h3>A new post</h3>')
+
       end
     end
   end
