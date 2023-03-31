@@ -1,0 +1,134 @@
+<form method="POST" action="/artists">
+
+    <div>
+    <lable>Artist name</lable>
+    <input type="text" name="name" />
+    </div>
+
+    <br>
+    <div>
+    <lable>Genre</lable>
+    <input type="text" name="genre" />
+    </div>
+
+    <br>
+    <div>
+    <input type="submit" />
+    </div>
+
+    <br>
+    <a href="/artists">Go to the Artists page</a>
+</form>
+
+
+<!--
+http://localhost:9292/artists
+Artists
+Name: Pixies
+Genre: Rock
+Name: ABBA
+Genre: Pop
+Name: Taylor Swift
+Genre: Pop
+Name: Nina Simone
+Genre: Pop
+Name: Wild nothing
+Genre: Indie
+Name: King
+Genre: Pop
+
+Create a new Artist
+
+http://localhost:9292/artists/new
+Artist name 
+
+Genre 
+
+
+Go to the Artists page
+
+
+
+#####➜  music_library_database_app git:(main) ✗ rspec
+
+AlbumRepository
+finds all albums
+finds one album
+creates an album
+deletes an album
+
+ArtistRepository
+finds all artists
+finds one artist
+creates an album
+
+Application
+GET /
+  returns the html hello message with the given name (PENDING: Temporarily skipped with xit)
+  returns the html hello message with a different name (PENDING: Temporarily skipped with xit)
+  returns an html list of names (PENDING: Temporarily skipped with xit)
+  returns a hello page if the password is correct (PENDING: Temporarily skipped with xit)
+  returns a forbidden page if the password is incorrect (PENDING: Temporarily skipped with xit)
+GET /albums/:id
+  should return info about album 2
+GET /albums
+  should return the list of albums (PENDING: Temporarily skipped with xit)
+  returns the list of albums as an HTML page (PENDING: Temporarily skipped with xit)
+  should have hyperlink to individual albums
+GET /albums/new
+  should return the form to add a new album
+GET /artists
+  should return the list of artists (PENDING: Temporarily skipped with xit)
+  should have hyperlink to individual artists
+GET /artists/new
+  should return the form to add a new artist
+GET /artists/:id
+  should return info about second artist
+POST /albums
+  should validate album parameters
+  should create a new album
+POST /artists
+  should validate artist parameters
+  should create a new artist
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+1) Application GET / returns the html hello message with the given name
+   # Temporarily skipped with xit
+   # ./spec/integration/application_spec.rb:26
+
+2) Application GET / returns the html hello message with a different name
+   # Temporarily skipped with xit
+   # ./spec/integration/application_spec.rb:33
+
+3) Application GET / returns an html list of names
+   # Temporarily skipped with xit
+   # ./spec/integration/application_spec.rb:40
+
+4) Application GET / returns a hello page if the password is correct
+   # Temporarily skipped with xit
+   # ./spec/integration/application_spec.rb:50
+
+5) Application GET / returns a forbidden page if the password is incorrect
+   # Temporarily skipped with xit
+   # ./spec/integration/application_spec.rb:57
+
+6) Application GET /albums should return the list of albums
+   # Temporarily skipped with xit
+   # ./spec/integration/application_spec.rb:89
+
+7) Application GET /albums returns the list of albums as an HTML page
+   # Temporarily skipped with xit
+   # ./spec/integration/application_spec.rb:102
+
+8) Application GET /artists should return the list of artists
+   # Temporarily skipped with xit
+   # ./spec/integration/application_spec.rb:143
+
+
+Finished in 0.10458 seconds (files took 0.19737 seconds to load)
+25 examples, 0 failures, 8 pending
+
+➜  music_library_database_app git:(main) ✗ 
+
+-->

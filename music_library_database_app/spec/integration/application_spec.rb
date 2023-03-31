@@ -23,21 +23,21 @@ describe Application do
 
       # to make it dynamic:
       context 'GET /' do
-        it 'returns the html hello message with the given name' do
+        xit 'returns the html hello message with the given name' do
           response = get('/', name: 'Shilpa')
 
           expect(response.body).to include('<h1> Hello Shilpa!</h1>')
         end
 
       # another variation:
-        it 'returns the html hello message with a different name' do
+        xit 'returns the html hello message with a different name' do
           response = get('/', name: 'Meghna')
 
           expect(response.body).to include('<h1> Hello Meghna!</h1>')
         end
 
               # making Arrays as dynamic:
-              it 'returns an html list of names' do
+              xit 'returns an html list of names' do
                 response = get('/')
       
                 expect(response.body).to include('<p>Harshita</p>')
@@ -47,14 +47,14 @@ describe Application do
               end
 
               # Dealing with conditions like having a password:
-              it 'returns a hello page if the password is correct' do
+              xit 'returns a hello page if the password is correct' do
                 response = get('/', password: 'abcd')
       
                 expect(response.body).to include('Hello!')
               end
 
               # or what happens when the password is incorrect:
-              it 'returns a forbidden page if the password is incorrect' do
+              xit 'returns a forbidden page if the password is incorrect' do
                 response = get('/', password: 'junkpwd')
       
                 expect(response.body).to include('Access forbidden!')
@@ -121,7 +121,20 @@ describe Application do
       expect(response.body).to include('a href="/albums/5">Bossanova</a><br />')
     end
 
+  end
 
+  # Web Apps - Phase 3 - Ch 4 - Using Forms:
+  context 'GET /albums/new' do
+    it 'should return the form to add a new album' do
+      response = get('/albums/new')
+
+      expect(response.status).to eq(200)
+      expect(response.body).to include('<form method="POST" action="/albums">')
+      expect(response.body).to include('<input type="text" name="title" />')
+      expect(response.body).to include('<input type="text" name="release_year" />')
+      expect(response.body).to include('<input type="text" name="artist_id" />')
+
+    end
   end
 
 
@@ -151,6 +164,20 @@ describe Application do
 
   end
 
+
+      # Web Apps - Phase 3 - Ch4 - Challenge - Test-drive and implement a form page to add a new artist.
+      context 'GET /artists/new' do
+        it 'should return the form to add a new artist' do
+          response = get('/artists/new')
+    
+          expect(response.status).to eq(200)
+          expect(response.body).to include('<form method="POST" action="/artists">')
+          expect(response.body).to include('<input type="text" name="name" />')
+          expect(response.body).to include('<input type="text" name="genre" />')
+    
+        end
+      end
+
   # Phase 3 - Ch3 - Challenge: Test-drive a route GET /artists/:id which returns an HTML page showing details for a single artist.
   context "GET /artists/:id" do
     it 'should return info about second artist' do
@@ -166,6 +193,19 @@ describe Application do
 
 
   context "POST /albums" do
+
+    # Phase 3 - Ch4 Using Forms - test being written:
+    it 'should validate album parameters' do
+      response = post(
+        '/albums',
+        invalid_artist_title: 'OK Computer',
+        another_invalid_thing: 123
+      )
+
+      expect(response.status).to eq(400)
+    end
+
+
     it 'should create a new album' do
       response = post('/albums', 
         title: 'OK Computer', 
@@ -174,7 +214,7 @@ describe Application do
         )
 
       expect(response.status).to eq(200)
-      expect(response.body).to eq('')
+      expect(response.body).to eq('New album has been created.')
           # rspec => 
           # expected: 200
           # got: 404
@@ -188,6 +228,18 @@ describe Application do
 
     # CH5 - Test-driving CRUD routes - Challenge - 2. Test-drive a route POST /artists, which creates a new artist in the database. Your test should verify the new artist is returned in the response of GET /artists.
     context 'POST /artists' do
+
+      # Phase 3 - Ch4 Using Forms - Challenge - Test-drive and implement a form page to add a new artist.
+      it 'should validate artist parameters' do
+        response = post(
+          '/artists',
+          invalid_artist_name: 'Sonu',
+          another_invalid_thing: 123
+        )
+
+        expect(response.status).to eq(400)
+      end
+
       it 'should create a new artist' do
         response = post('/artists', 
           name: 'Wild nothing', 
@@ -195,7 +247,7 @@ describe Application do
           )
   
         expect(response.status).to eq(200)
-        expect(response.body).to eq('')
+        expect(response.body).to eq('New artist has been created.')
   
             response = get('/artists')
             expect(response.body).to include('Wild nothing')

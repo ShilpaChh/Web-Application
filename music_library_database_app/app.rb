@@ -59,6 +59,13 @@ class Application < Sinatra::Base
     #         # Doolittle, Surfer Rosa, Waterloo, Super Trouper, Bossanova, Lover, Folklore, I Put a Spell on You, Baltimore, Here Comes the Sun, Fodder on My Wings, Ring Ring, Ok Computer
     #   end
 
+    
+        # Web Apps - Phase 3 - Ch4 - Using forms:
+        get '/albums/new' do
+          return erb(:new_album)
+
+        end
+        
 
       # Phase 3 - Ch2 - implement a GET /albums/:id 
       get '/albums/:id' do
@@ -98,8 +105,9 @@ class Application < Sinatra::Base
           @album = repo.all
         
           return erb(:albums2)
+          return erb(:new_album)
         end
-        
+
         # CH5 - Challenge - Test-drive a route GET /artists, which returns the list of artists:
         # get '/artists' do
         #   repo = ArtistRepository.new
@@ -125,6 +133,12 @@ class Application < Sinatra::Base
           return erb(:artists1)
         end
 
+          # Web Apps - Phase 3 - Ch4 - Challenge - Test-drive and implement a form page to add a new artist.
+          get '/artists/new' do
+            return erb(:new_artist)
+          end
+                
+
           # Phase 3 - Ch3 - Challenge: Test-drive a route GET /artists/:id which returns an HTML page showing details for a single artist.
           get '/artists/:id' do
             repo = ArtistRepository.new
@@ -137,6 +151,14 @@ class Application < Sinatra::Base
 
 
           post '/albums' do
+
+            if invalid_album_request_parameters?
+              status 400 # Refrenced: https://sinatrarb.com/intro.html
+
+              return "No nils or empty fields are allowed!"
+
+            end
+
             repo = AlbumRepository.new
             new_album = Album.new
             new_album.title = params[:title]
@@ -144,15 +166,27 @@ class Application < Sinatra::Base
             new_album.artist_id = params[:artist_id]
           
             repo.create(new_album)
-              return ''
+            
+              return 'New album has been created.'
                   # rspec => also, can chk on Postman:
                   # rackup again and then Postman ->Posts => http://localhost:9292/albums => body => form data => enter the Ok Computer and its details => sends => GET -> sends, shows new album, 'OK Computer'
+           
+
             end
     
 
 
-    # CH5 - Test-driving CRUD routes - Challenge - 2. Test-drive a route POST /artists, which creates a new artist in the database. Your test should verify the new artist is returned in the response of GET /artists.
+    # CH5 - Test-driving CRUD routes - Challenge - 2. Test-drive a route POST /artists, which creates a new artist in the database. 
+    # Your test should verify the new artist is returned in the response of GET /artists.
           post '/artists' do
+
+              if invalid_artist_request_parameters?
+                status 400 # Refernced: https://sinatrarb.com/intro.html
+
+                return "No nils or empty fields are allowed!"
+
+              end
+
             repo = ArtistRepository.new
             new_artist = Artist.new
             # new_artist.id = params[:id]
@@ -163,11 +197,37 @@ class Application < Sinatra::Base
             new_artist.genre = params[:genre]
           
             repo.create(new_artist)
-              return ''
+            return 'New artist has been created.'
                   # rspec => also, can chk on Postman:
                   # rackup again and then Postman ->Posts => http://localhost:9292/albums => body => form data => enter the Ok Computer and its details => sends => GET -> sends, shows 'Pixies, ABBA, Taylor Swift, Nina Simone, Wild nothing'
             end
     
+
+            def invalid_album_request_parameters?
+
+              # if strings are nil:
+              return true if params[:title] == nil || params[:release_year] == nil || params[:artist_id] == nil
+
+              # if strings are empty: 
+              return true if params[:title] == "" || params[:release_year] == "" || params[:artist_id] == ""
+
+              return false
+
+            end
+
+
+            def invalid_artist_request_parameters?
+
+              # if strings are nil:
+              return true if params[:name] == nil || params[:genre] == nil 
+
+              # if strings are empty: 
+              return true if params[:name] == "" || params[:genre] == ""
+
+              return false
+
+            end
+
 
 end
 
@@ -217,11 +277,7 @@ end
 
 # rspec ./spec/integration/application_spec.rb:63 # Application POST /artists should create a new artist
 
-# ➜  music_library_database_app git:(main) ✗ 
-# ➜  music_library_database_app git:(main) ✗ 
-# ➜  music_library_database_app git:(main) ✗ 
-# ➜  music_library_database_app git:(main) ✗ 
-# ➜  music_library_database_app git:(main) ✗ 
+
 # ➜  music_library_database_app git:(main) ✗ rspec
 
 # AlbumRepository
