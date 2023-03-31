@@ -37,7 +37,7 @@ describe Application do
 
   def create_test_post_with_tags(title, tags)
     PostManager.instance.add_post(
-      Post.new(title, "I'm just a test post. Nothing much to say really.", tags)
+       Post.new(title, "I'm just a test post. Nothing much to say really.", tags)
     )
   end
 end

@@ -9,19 +9,25 @@
 
   <h3>Add a new post</h3>
   <form method="post" action="/posts">
-    Title: <input type="text" name="content" />
+    <!-- # Title: <input type="text" name="content" /> -->
+    Title: <input type="text" name="title" />
+
     Content: <input type="text" name="content" />
+
     Tags: <input type="text" name="tags" />
 
     <input type="submit" value="Submit" />
   </form>
 
-  <hr />
+ <hr />
   <% @posts.each do |post| %>
+
     <div>
       <h3><%= post.title %></h3>
+
       <p><%= post.content %></p>
+
     </div>
-  <% end %>
+   <% end %>
 </body>
 </html>
